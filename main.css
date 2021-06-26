@@ -19,20 +19,11 @@ padding-left:15px;
         opacity:0;
 }
 /*line boreders*/
-.lineborder{
-overflow:hidden;
-text-align:center;
+.PABorder{
+border-top: 3px dashed #ffffff;
+color: rgba(0,0,0,0)
 }
-#borderbottom{
-position:relative;
-bottom:5px;
-}
-#topText{
-    font-weight:bold;
-    font-size:20px;
-    padding-left:45px;
-    padding-bottom:0px;
-}
+
 /*headings*/
 h3{
     font-weight:normal;
