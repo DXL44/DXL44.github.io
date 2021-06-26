@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Arrhythmia Theme Editor</title>
+<link rel="stylesheet" href="main.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+</style>
+</head>
+<body>
+<h1>PA THEME EDITOR</h1>
+<p>Currently, the theme editor only supports creating themes. Editing existing themes is planned :)</p>
+<p style="text-align:justify;">
+<h3>Base</h3>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col1picker"></input>		<span id="col1text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col2picker"></input>		<span id="col2text">000000</span><br>
+<h3>Players</h3>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col3picker"></input>		<span id="col3text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col4picker"></input>		<span id="col4text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col5picker"></input>		<span id="col5text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col6picker"></input>		<span id="col6text">000000</span><br>
+<h3>Objects</h3>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col7picker"></input>		<span id="col7text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col8picker"></input>		<span id="col8text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col9picker"></input>		<span id="col9text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col10picker"></input>		<span id="col10text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col11picker"></input>		<span id="col11text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col12picker"></input>		<span id="col12text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col13picker"></input>		<span id="col13text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col14picker"></input>		<span id="col14text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col15picker"></input>		<span id="col15text">000000</span><br>
+<h3>Background Objects</h3>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col16picker"></input>		<span id="col16text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col17picker"></input>		<span id="col17text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col18picker"></input>		<span id="col18text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col19picker"></input>		<span id="col19text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col20picker"></input>		<span id="col20text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col21picker"></input>		<span id="col21text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col22picker"></input>		<span id="col22text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col23picker"></input>		<span id="col23text">000000</span><br>
+<input class="ThemeColor" type="color" onchange="UpdateColors()" id="col24picker"></input>		<span id="col24text">000000</span><br>
+<button onclick="CreateTheme()">DOWNLOAD THEME</button><br>(Put it in the Themes folder and reload the level editor to use it!)
+</p>
+<p id="themtest"></p>
+<script>
+	/* all of the code here is probably really bad i'm sorry lmao */
+/*function LoadFile() {
+	 var lstfile = document.getElementById('lstupload').value;
+	 document.getElementById("themtest").innerHTML = "pee 3: revenge of the piss featuring the file name of YOUR file!" + "<br>" + lstfile;
+}
+*/ 
+function UpdateColors(){
+	for (let i = 1; i < 25; i++) {
+		var col = document.getElementById("col" +i +"picker").value;
+		var col = col.replace("#","")
+		if (col == document.getElementById("col" +i + "text").innerHTML){
+			console.log("Color " + i +" not changed.");
+		} else {
+			console.log("Color " + i +" set to " + col);
+			document.getElementById("col" +i + "text").innerHTML = col;
+		}
+	}
+}
+function CreateTheme(){
+	/*Name the theme*/
+	let text;
+  	let themename = prompt("Name your theme:",);
+	/*put it together*/
+	var theme = {
+	"id":Math.round(Math.random()*1000000),
+	"name":themename,
+	"gui":(document.getElementById("col1text").innerHTML),
+	"bg":(document.getElementById("col2text").innerHTML),
+	"players":[(document.getElementById("col3text").innerHTML),(document.getElementById("col4text").innerHTML),(document.getElementById("col5text").innerHTML),(document.getElementById("col6text").innerHTML)],
+	"objs":[(document.getElementById("col7text").innerHTML),(document.getElementById("col8text").innerHTML),(document.getElementById("col9text").innerHTML),(document.getElementById("col10text").innerHTML),(document.getElementById("col11text").innerHTML),(document.getElementById("col12text").innerHTML),(document.getElementById("col13text").innerHTML),(document.getElementById("col14text").innerHTML),(document.getElementById("col15text").innerHTML)],
+	"bgs":[(document.getElementById("col16text").innerHTML),(document.getElementById("col17text").innerHTML),(document.getElementById("col18text").innerHTML),(document.getElementById("col19text").innerHTML),(document.getElementById("col20text").innerHTML),(document.getElementById("col21text").innerHTML),(document.getElementById("col22text").innerHTML),(document.getElementById("col23text").innerHTML),(document.getElementById("col24text").innerHTML)]};
+	var themeJSON = JSON.stringify(theme);
+	download(themename + ".lst", themeJSON)
+} 
+function download(filename, text){
+	var element = document.createElement('a');
+	element.setAttribute('href','data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	element.setAttribute('download',filename);
+	element.style.display = 'none';
+	document.body.appendChild(element);
+	element.click();
+	document.body.removeChild(element);
+}
+</script>
+</body>
+</html>
