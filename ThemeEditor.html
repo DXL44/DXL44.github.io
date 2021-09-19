@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Project Arrhythmia Theme Editor</title>
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="css/main.css">
 <!--cool fonts-->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
@@ -13,6 +13,9 @@
 <body>
 <h1>PA THEME EDITOR</h1>
 <p>Currently, the theme editor only supports creating themes. Editing existing themes is planned :)</p>
+<!--load a theme
+<input type="file"
+       id=";lstupload" name="lstupload" accept=".lst">-->
 <p style="text-align:justify;">
 	<!---help i really need to find a better way to do this besides constantly copying and pasting help help he-->
 <h3>Base</h3>
@@ -48,11 +51,6 @@
 <p id="ThemeNotice"></p>
 <script>
 	/* all of the code here is probably really bad i'm sorry lmao */
-/*function LoadFile() {
-	 var lstfile = document.getElementById('lstupload').value;
-	 document.getElementById("themtest").innerHTML = "pee 3: revenge of the piss featuring the file name of YOUR file!" + "<br>" + lstfile;
-}
-*/ 
 function UpdateColors(){
 	/* holy woag its a loop! that makes things easy and lets us automatically get all 24 themes without manually getting them */
 	for (let i = 1; i < 25; i++) {
@@ -97,6 +95,10 @@ function download(filename, text){
 	document.body.appendChild(element);
 	element.click();
 	document.body.removeChild(element);
+}
+function loadTheme(){
+	var lstfile = document.getElementById('lstupload');
+	console.log(lstfile)
 }
 </script>
 </body>
