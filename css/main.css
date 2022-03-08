@@ -1,3 +1,4 @@
+
 .mainTitle {
     font-size:95px;
     font-family:"Impact";
@@ -11,7 +12,6 @@
     padding-bottom:15px;
 }
 .mainpageBanner {
-    margin:0;
     height:100%;
     width: 100%;
     background-color: rgb(90, 59, 0);
