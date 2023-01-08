@@ -1,4 +1,4 @@
-
+/* Main page classes */
 .mainTitle {
     font-size:95px;
     font-family:"Impact";
@@ -23,7 +23,13 @@
     border-right:0px;
     border-bottom: 5px orange;
     border-style:solid;
+
 }
+.mainWindow {
+    background-color: rgba(0,0,0,0.5);
+    width:80%;
+}
+/* shenanigans */
 body {
     background-color:rgb(43, 28, 1);
 }
