@@ -28,8 +28,17 @@
 .mainWindow {
     background-color: rgba(0,0,0,0.5);
     width:80%;
+    border: 5px solid orange;
+    border-radius: 8px;
+    padding: 5px;
+    color: orange;
+    width: 25%;
 }
 /* shenanigans */
 body {
     background-color:rgb(43, 28, 1);
+}
+
+div.mainWindow > h1{
+text-transform:uppercase;
 }
