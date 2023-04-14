@@ -68,7 +68,14 @@ function fpRandomText(){
         "subscribe to tacomazing",
         "heh",
         "Gee, it sure is boring around here.",
-        "What if I tap?"
+        "What if I tap?",
+        "Ship part was cool",
+        "Skelecube was here",
+        "Gamemode switched to Creative",
+        "DO NOT HANG UP.",
+        "subscribe to motioniii",
+        "",
+
 
     ]
         document.getElementById("randomGreet").innerHTML = (randomtext(options));
