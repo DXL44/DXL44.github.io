@@ -39,11 +39,11 @@ function fpRandomText(){
         "beastmode when",
         "A wild website appears!",
         "im spending too much time writing all fo these.",
-        "my hardest is still the lightning road",
+        "my hardest is no longer the lightning road", 
         "have you ever been to the screamroom?",
         "RUSHDOWN ASSEMBLE",
         "swag",
-        "null",
+        "null", 
         "this one's a secret...<!--you found it! go you :)-->",
         "This is it, Fridge.",
         "Uploading dishes...",
@@ -74,7 +74,13 @@ function fpRandomText(){
         "Gamemode switched to Creative",
         "DO NOT HANG UP.",
         "subscribe to motioniii",
-        "",
+        "im going to dissolve",
+        "In pursuit of something different.",
+        "go go go go",
+        ":3",
+        ">:3",
+        "Wawa is peak.",
+        "Obligatory 421 reference",
 
 
     ]

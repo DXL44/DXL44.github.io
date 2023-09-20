@@ -27,18 +27,30 @@
 }
 .mainWindow {
     background-color: rgba(0,0,0,0.5);
-    width:80%;
+    width:300px;
     border: 5px solid orange;
     border-radius: 8px;
     padding: 5px;
+    margin: 5px;
     color: orange;
-    width: 25%;
+
 }
 /* shenanigans */
 body {
     background-color:rgb(43, 28, 1);
+    background: linear-gradient(90deg, rgba(43,28,11,1) 0%, rgba(130,84,31,1) 50%, rgba(43,28,11,1) 100%);
 }
 
 div.mainWindow > h1{
 text-transform:uppercase;
+}
+
+/*buttons!!*/
+
+/* HOW THE FUCK DO YOU USE FLEX AGAIN??? */
+div.mainFlex {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    align-items: center;
 }
