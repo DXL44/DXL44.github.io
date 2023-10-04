@@ -43,6 +43,13 @@ body {
 
 div.mainWindow > h1{
 text-transform:uppercase;
+font-weight:bold;
+font-family:"Fira Code";
+text-align:center;
+background-color:rgba(0,0,0,0.5);
+margin:-5px;
+margin-bottom:5px;
+border-bottom:5px solid orange;
 }
 
 /*buttons!!*/
@@ -53,4 +60,23 @@ div.mainFlex {
     flex-flow: row wrap;
     justify-content:center;
     align-items: center;
+}
+
+.btn{
+    border:3px solid orange;
+    margin:5px;
+    background-color:rgba(25,0,0,0.5);
+    color:orange;
+}
+
+.btn:hover{
+    border:3px solid orange;
+    margin:5px;
+    background-color:rgba(75,0,0,0.75);
+    color:orange;
+}
+
+.btn{
+    width:45%;
+    justify-self:center;
 }
